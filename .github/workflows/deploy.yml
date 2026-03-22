@@ -11,7 +11,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - run: flutter build web --release --base-href /<tên-repo-của-bạn>/
+      - run: flutter build web --release --base-href /S-Mate-Test/
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
