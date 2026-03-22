@@ -210,10 +210,10 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
         ),
         actions: [
           if (isNewPlan)
-            IconButton(
-              icon: const Icon(Icons.auto_awesome, color: AppTheme.primary),
+            TextButton.icon(
+              icon: const Icon(Icons.auto_awesome, color: AppTheme.primary, size: 20),
+              label: const Text('Smart Adjust', style: TextStyle(color: AppTheme.primary, fontWeight: FontWeight.w600)),
               onPressed: _askAiToModify,
-              tooltip: 'Ask AI to Modify',
             ),
           IconButton(icon: const Icon(Icons.map_outlined), onPressed: () => context.go('/map')),
         ],
@@ -328,16 +328,7 @@ class _ItineraryScreenState extends State<ItineraryScreen> {
                 ),
               ),
             ),
-        ],
       ),
-      floatingActionButton: isNewPlan && !_isEditing
-          ? FloatingActionButton.extended(
-              onPressed: _askAiToModify,
-              label: const Text('Smart Adjust'),
-              icon: const Icon(Icons.auto_awesome),
-              backgroundColor: AppTheme.primary,
-            )
-          : null,
     );
   }
 }
